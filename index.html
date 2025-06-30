@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resistance: Avalon - Persian Edition</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Vazirmatn', sans-serif;
+        overscroll-behavior: none;
+        background-image: url('/images/Avalon.png');
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+      }
+      /* Add a dark, semi-transparent overlay to ensure text is always readable */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(10, 5, 20, 0.65); /* A dark purple overlay */
+        z-index: -1;
+      }
+      .tap-highlight-transparent {
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="text-gray-100 antialiased overflow-hidden h-screen">
+    <div id="root" class="h-full"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

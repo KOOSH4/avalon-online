@@ -24,29 +24,22 @@ const NightPhase: React.FC<NightPhaseProps> = ({ gameState, advanceNightPhase })
 
   const NightKnowledgeCard: React.FC = () => (
     <div className={`w-full max-w-sm p-4 bg-gray-900/70 backdrop-blur-lg border-2 ${teamBorder} rounded-3xl shadow-2xl flex flex-col items-center text-center animate-fade-in`}>
-        <h2 className="text-3xl font-bold text-indigo-300 mb-4" style={{textShadow: '0 0 5px #a5b4fc'}}>فاز شب 🌙</h2>
+        <h2 className="text-3xl font-bold text-indigo-300 mb-2" style={{textShadow: '0 0 5px #a5b4fc'}}>فاز شب 🌙</h2>
+        <p className="text-2xl font-semibold text-yellow-300 mb-3">{currentPlayer.name}</p>
         
         {roleInfo.image ? (
-            <div className={`w-32 h-32 mb-3 rounded-full overflow-hidden border-4 ${teamBorder} shadow-lg`}>
+            <div className={`w-36 h-36 mb-3 rounded-full overflow-hidden border-4 ${teamBorder} shadow-lg`}>
                 <img src={roleInfo.image} alt={roleInfo.name} className="w-full h-full object-cover" />
             </div>
         ) : (
-            <div className={`w-32 h-32 mb-3 rounded-full bg-gray-800 border-4 ${teamBorder} flex items-center justify-center`}>
+            <div className={`w-36 h-36 mb-3 rounded-full bg-gray-800 border-4 ${teamBorder} flex items-center justify-center`}>
               <span className="text-5xl">{teamIcon}</span>
             </div>
         )}
         
-        <p className="text-2xl font-semibold text-yellow-300 mb-4">{currentPlayer.name}</p>
-        
-        <div className="w-full bg-black/40 p-3 rounded-xl mb-4 text-right">
-            <p className="text-lg">
-                <span className="font-bold text-yellow-400">نقش:</span>
-                <span className={`font-bold ${teamColor}`}>{` ${roleInfo.name}`}</span>
-            </p>
-            <p>
-                <span className="font-bold text-yellow-400">تیم:</span>
-                <span className={teamColor}>{` ${currentPlayer.team} ${teamIcon}`}</span>
-            </p>
+        <div className="w-full bg-black/40 p-3 rounded-xl mb-4 text-center">
+            <h3 className={`text-xl font-bold ${teamColor}`}>{roleInfo.name}</h3>
+            <p className={teamColor}>{`تیم: ${currentPlayer.team} ${teamIcon}`}</p>
         </div>
         
         <div className="w-full bg-black/40 p-4 rounded-xl">

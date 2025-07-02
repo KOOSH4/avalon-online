@@ -16,11 +16,11 @@ const RoleCard: React.FC<{ player: RoleRevealProps['gameState']['players'][0] }>
     <div className={`w-full max-w-sm p-4 bg-gray-900/70 backdrop-blur-lg border-2 ${teamBorderColor} rounded-3xl shadow-2xl flex flex-col items-center text-center animate-fade-in`}>
       
       {roleInfo.image ? (
-        <div className="w-48 h-48 mb-4 rounded-full overflow-hidden border-4 border-yellow-400/50 shadow-lg">
+        <div className="w-56 h-56 mb-4 rounded-full overflow-hidden border-4 border-yellow-400/50 shadow-lg">
             <img src={roleInfo.image} alt={roleInfo.name} className="w-full h-full object-cover" />
         </div>
       ) : (
-        <div className="w-48 h-48 mb-4 rounded-full bg-gray-800 border-4 border-yellow-400/50 flex items-center justify-center">
+        <div className="w-56 h-56 mb-4 rounded-full bg-gray-800 border-4 border-yellow-400/50 flex items-center justify-center">
           <span className="text-5xl">{player.team === Team.Good ? '😇' : '😈'}</span>
         </div>
       )}

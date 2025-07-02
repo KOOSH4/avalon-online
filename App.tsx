@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useGameLogic } from './hooks/useGameLogic';
 import { GamePhase } from './types';
@@ -56,7 +57,7 @@ export default function App(): React.ReactNode {
 
       <div className="flex items-center mb-4 text-yellow-400">
         <div className="w-12 h-12 mr-4">{GameIcon}</div>
-        <h1 className="text-4xl font-bold tracking-wider" style={{textShadow: '0 0 8px rgba(250, 204, 21, 0.5)'}}>آوالون 🏰</h1>
+        <h1 className="text-4xl font-bold tracking-wider" style={{textShadow: '0 0 8px rgba(250, 204, 21, 0.5)'}}>آوالون</h1>
       </div>
 
       <div className="w-full h-[calc(100%-80px)] bg-slate-900/70 rounded-2xl shadow-2xl backdrop-blur-md border-2 border-yellow-400/30 p-4 overflow-y-auto">

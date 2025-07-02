@@ -51,7 +51,7 @@ export const ROLE_DATA: { [key in Role]: RoleInfo } = {
         </>
       );
     },
-    image: '/images/Merlin.png',
+    image: '/avalon-online/images/Merlin.png',
   },
   [Role.Percival]: {
     name: Role.Percival,
@@ -73,14 +73,14 @@ export const ROLE_DATA: { [key in Role]: RoleInfo } = {
         </>
       );
     },
-    image: '/images/Percival.png',
+    image: '/avalon-online/images/Percival.png',
   },
   [Role.LoyalServant]: {
     name: Role.LoyalServant,
     team: Team.Good,
     description: 'شما یک خدمتگزار وفادار آرتور 😇 هستید. شما هیچ اطلاعات خاصی ندارید، اما برای پیروزی نیکی تلاش می‌کنید.',
     knowledge: () => 'شما هیچ اطلاعاتی ندارید. به حس خود و دیگران اعتماد کنید. 🤞',
-    image: '/images/Loyal_Servant_of_Arthur.png',
+    image: '/avalon-online/images/Loyal_Servant_of_Arthur.png',
   },
     [Role.Tristan]: {
     name: Role.Tristan,
@@ -107,21 +107,21 @@ export const ROLE_DATA: { [key in Role]: RoleInfo } = {
     team: Team.Evil,
     description: 'شما مورگانا 🔮 هستید. شما به عنوان مرلین به پرسیوال ظاهر می‌شوید تا او را فریب دهید. دیگر افراد شرور شما را می‌شناسند.',
     knowledge: (players, self) => <EvilTeammates players={players} self={self} />,
-    image: '/images/Morgana.png',
+    image: '/avalon-online/images/Morgana.png',
   },
   [Role.Assassin]: {
     name: Role.Assassin,
     team: Team.Evil,
     description: 'شما آدمکش 🗡️ هستید. اگر نیکان سه ماموریت را با موفقیت انجام دهند، شما فرصت دارید با حدس زدن هویت مرلین، بازی را به نفع شروران تمام کنید.',
     knowledge: (players, self) => <EvilTeammates players={players} self={self} />,
-    image: '/images/Assassin.png',
+    image: '/avalon-online/images/Assassin.png',
   },
   [Role.Mordred]: {
     name: Role.Mordred,
     team: Team.Evil,
     description: 'شما موردرد 🎭 هستید. مرلین هویت شما را نمی‌داند. این به شما اجازه می‌دهد تا آزادانه در میان نیکان عمل کنید.',
     knowledge: (players, self) => <EvilTeammates players={players} self={self} />,
-    image: '/images/Mordred.png',
+    image: '/avalon-online/images/Mordred.png',
   },
   [Role.Oberon]: {
     name: Role.Oberon,

@@ -1,4 +1,3 @@
-
 import { useReducer, useCallback } from 'react';
 import { GameState, GamePhase, Player, Role, Team, Quest, QuestResult } from '../types';
 import { ROLE_CONFIGURATIONS, QUEST_RULES, ROLE_DATA } from '../constants';
@@ -8,6 +7,7 @@ type Action =
   | { type: 'ADVANCE_ROLE_REVEAL' }
   | { type: 'START_NIGHT_PHASE' }
   | { type: 'ADVANCE_NIGHT_PHASE' }
+  | { type: 'START_GAME_AFTER_OVERVIEW' }
   | { type: 'START_TEAM_PROPOSAL' }
   | { type: 'SELECT_TEAM_MEMBER'; player: Player }
   | { type: 'PROPOSE_TEAM' }
@@ -87,9 +87,17 @@ function gameReducer(state: GameState, action: Action): GameState {
     case 'ADVANCE_NIGHT_PHASE': {
         const nextStep = state.privateActionStep + 1;
         if(nextStep >= state.players.length) {
-            return { ...state, phase: GamePhase.TEAM_PROPOSAL, gameMessage: `دور ${state.currentRound + 1}: نوبت ${state.players[state.currentLeaderIndex].name} است تا تیم را انتخاب کند.` };
+            return { ...state, phase: GamePhase.GAME_OVERVIEW };
         }
         return { ...state, privateActionStep: nextStep };
+    }
+
+    case 'START_GAME_AFTER_OVERVIEW': {
+      return {
+          ...state,
+          phase: GamePhase.TEAM_PROPOSAL,
+          gameMessage: `دور ${state.currentRound + 1}: نوبت ${state.players[state.currentLeaderIndex].name} است تا تیم را انتخاب کند.`
+      };
     }
 
     case 'START_TEAM_PROPOSAL': {
@@ -232,6 +240,7 @@ export const useGameLogic = () => {
     }, []);
     const advanceRoleReveal = useCallback(() => dispatch({ type: 'ADVANCE_ROLE_REVEAL' }), []);
     const advanceNightPhase = useCallback(() => dispatch({ type: 'ADVANCE_NIGHT_PHASE' }), []);
+    const startGameAfterOverview = useCallback(() => dispatch({ type: 'START_GAME_AFTER_OVERVIEW' }), []);
     const selectTeamMember = useCallback((player: Player) => dispatch({ type: 'SELECT_TEAM_MEMBER', player }), []);
     const proposeTeam = useCallback(() => dispatch({ type: 'PROPOSE_TEAM' }), []);
     const handleTeamVote = useCallback((approved: boolean) => dispatch({ type: 'HANDLE_TEAM_VOTE', approved }), []);
@@ -253,6 +262,7 @@ export const useGameLogic = () => {
         setupGame,
         advanceRoleReveal,
         advanceNightPhase,
+        startGameAfterOverview,
         selectTeamMember,
         proposeTeam,
         handleTeamVote,

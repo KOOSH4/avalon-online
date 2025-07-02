@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export enum Team {
@@ -39,6 +38,7 @@ export enum GamePhase {
   SETUP = 'SETUP',
   ROLE_REVEAL = 'ROLE_REVEAL',
   NIGHT_PHASE = 'NIGHT_PHASE',
+  GAME_OVERVIEW = 'GAME_OVERVIEW',
   TEAM_PROPOSAL = 'TEAM_PROPOSAL',
   TEAM_VOTE = 'TEAM_VOTE',
   QUEST_EXECUTION = 'QUEST_EXECUTION',

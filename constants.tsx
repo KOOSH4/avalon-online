@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Role, Team, RoleInfo, Player } from './types';
 
@@ -90,7 +89,7 @@ export const ROLE_DATA: { [key in Role]: RoleInfo } = {
         const isolde = players.find(p => p.role === Role.Isolde);
         return isolde ? <>شما <span className="font-bold text-blue-300">{isolde.name}</span> (ایزولت) را می‌شناسید. با هم برای پیروزی نیکان تلاش کنید.</> : 'شما کسی را نمی‌شناسید.';
     },
-    image: '',
+    image: '/avalon-online/images/Tristan.png',
   },
   [Role.Isolde]: {
     name: Role.Isolde,
@@ -100,7 +99,7 @@ export const ROLE_DATA: { [key in Role]: RoleInfo } = {
         const tristan = players.find(p => p.role === Role.Tristan);
         return tristan ? <>شما <span className="font-bold text-blue-300">{tristan.name}</span> (تریستان) را می‌شناسید. با هم برای پیروزی نیکان تلاش کنید.</> : 'شما کسی را نمی‌شناسید.';
     },
-    image: '',
+    image: '/avalon-online/images/Isolde.png',
   },
   [Role.Morgana]: {
     name: Role.Morgana,
@@ -128,7 +127,7 @@ export const ROLE_DATA: { [key in Role]: RoleInfo } = {
     team: Team.Evil,
     description: 'شما اوبرون 😶 هستید. شما در تیم شروران هستید، اما هویت شما برای سایر شروران (و بالعکس) فاش نمی‌شود. مرلین شما را می‌شناسد.',
     knowledge: () => 'شما هیچ‌کس را نمی‌شناسید و هیچ‌کس شما را نمی‌شناسد. در تاریکی عمل کنید.',
-    image: '',
+    image: '/avalon-online/images/Oberon.png',
   },
 };
 
@@ -161,14 +160,6 @@ export const STRINGS_FA = {
   fail: "شکست",
 };
 
-export const GameIcon = (
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="fill-current">
-        <path d="M100 10L120 70L190 70L135 110L155 170L100 130L45 170L65 110L10 70L80 70L100 10Z" stroke="gold" strokeWidth="5" fill="rgba(255, 215, 0, 0.3)"/>
-    </svg>
-);
-
 export const CrownIcon = (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 18V10a8 8 0 0114 0v8M3 21h18M12 4l2 2-2 2-2-2 2-2z" />
-    </svg>
+    <span role="img" aria-label="Leader" className="text-2xl">👑</span>
 );
